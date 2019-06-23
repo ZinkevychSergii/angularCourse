@@ -6,10 +6,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TodosModule } from './todos/todos.module';
 import { FileSizesModule } from './file-sizes/file-sizes.module';
-import { SizeFormatPipe } from './file-size/size-format.pipe';
+import { httpInterceptorProviders } from './http-interceptors/provider.interceptor';
 
 @NgModule({
-  declarations: [AppComponent, SizeFormatPipe],
+  declarations: [AppComponent],
   imports: [
     FormsModule,
     BrowserAnimationsModule,
@@ -17,7 +17,7 @@ import { SizeFormatPipe } from './file-size/size-format.pipe';
     TodosModule,
     FileSizesModule
   ],
-  providers: [],
+  providers: [...httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
