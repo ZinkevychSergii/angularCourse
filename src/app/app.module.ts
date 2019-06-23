@@ -1,26 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser'
-import { FormsModule } from '@angular/forms'
-import { MatListModule } from '@angular/material/list'
-import { MatCheckboxModule } from '@angular/material/checkbox'
-import { MatIconModule } from '@angular/material/icon'
-import { MatButtonModule } from '@angular/material/button'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { NgModule } from '@angular/core'
-import { MatInputModule } from '@angular/material/input'
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component'
+import { AppComponent } from './app.component';
+import { TodosModule } from './todos/todos.module';
+import { FileSizesModule } from './file-sizes/file-sizes.module';
+import { SizeFormatPipe } from './file-size/size-format.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SizeFormatPipe],
   imports: [
     FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
-    MatInputModule,
-    MatListModule,
-    MatCheckboxModule,
-    MatIconModule,
-    MatButtonModule
+    TodosModule,
+    FileSizesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

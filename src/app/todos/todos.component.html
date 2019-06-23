@@ -1,0 +1,19 @@
+<mat-form-field class="example-full-width">
+  <input
+    matInput
+    placeholder="Todo"
+    [(ngModel)]="newTodo"
+    (keyup.enter)="addTodo()"
+  />
+</mat-form-field> 
+
+<mat-list role="list">
+  <mat-list-item *ngFor="let todo of todos; let i = index">
+    <div class="todo">
+      <mat-checkbox [(ngModel)]="todo.isDone"> {{ todo.title }}</mat-checkbox>
+      <button (click)="deleteTodo(i)" mat-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-list-item>
+</mat-list>
