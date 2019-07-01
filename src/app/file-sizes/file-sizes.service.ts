@@ -10,7 +10,7 @@ export class FileSizesService {
     return this.sizes;
   }
 
-  addSize(todo: sting) {
+  addSize(todo: string) {
     this.sizes.push(todo);
   }
 }
