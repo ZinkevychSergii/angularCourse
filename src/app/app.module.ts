@@ -4,23 +4,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TodosModule } from './todos/todos.module';
-import { FileSizesModule } from './file-sizes/file-sizes.module';
-import { httpInterceptorProviders } from './http-interceptors/provider.interceptor';
-import { TagInputComponent } from './tag-input/tag-input.component';
-import { OmitSpaceDirective } from './tag-input/omit-space.directive';
+import { RouterModule } from '@angular/router';
+import { routes } from './config/routes';
+import { HomeModule } from './home/home.module';
+import { AboutModule } from './about/about.module';
+import { NavigationComponent } from './navigation/navigation.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
-  declarations: [AppComponent, TagInputComponent, OmitSpaceDirective],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
+    HomeModule,
+    MatMenuModule,
+    AboutModule,
     ReactiveFormsModule,
     FormsModule,
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    BrowserModule,
-    TodosModule,
-    FileSizesModule
+    BrowserModule
   ],
-  providers: [...httpInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
