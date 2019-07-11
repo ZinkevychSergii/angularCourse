@@ -1,29 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { routes } from './config/routes';
-import { HomeModule } from './home/home.module';
-import { AboutModule } from './about/about.module';
-import { NavigationComponent } from './navigation/navigation.component';
-import { MatMenuModule } from '@angular/material/menu';
+import { AppRoutingModule } from './app-routing.module';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleCreateComponent } from './article-create/article-create.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent],
+  declarations: [
+    AppComponent,
+    ArticleListComponent,
+    ArticleCreateComponent,
+  ],
   imports: [
-    HomeModule,
-    MatMenuModule,
-    AboutModule,
+    BrowserModule,
+    AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
-    RouterModule.forRoot(routes),
-    BrowserAnimationsModule,
-    BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
